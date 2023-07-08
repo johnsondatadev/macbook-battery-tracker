@@ -4,6 +4,9 @@ from datetime import datetime
 
 
 def get_output(cmd):
+    """
+    A helper method to verify the subprocess before sending an output of the particular battery information requested.
+    """
     return subprocess.check_output(cmd, shell=True, universal_newlines=True).strip()
 
 

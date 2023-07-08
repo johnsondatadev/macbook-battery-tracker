@@ -1,12 +1,6 @@
 import openpyxl
 import os
-from datetime import datetime
 import constants
-
-
-# from app import app
-
-# myapp = app.get_mac_info()
 
 
 # Initialize the Excel file with column headers if it doesn't exist
@@ -25,8 +19,6 @@ def initialize_excel_file():
 
 
 def write_to_excel(mac_battery_info: dict) -> None:
-    # battery = psutil.sensors_battery()
-    # battery_percent = battery.percent
 
     # Open the Excel file
     wb = openpyxl.load_workbook(constants.EXCEL_FILE_PATH)
@@ -39,34 +31,17 @@ def write_to_excel(mac_battery_info: dict) -> None:
 
     # Write the data to the Excel sheet
     for index, (key, value) in enumerate(mac_battery_info.items()):
-        # print(f"Index: {index + 1}, Key: {key}, Value: {value}")
         sheet.cell(row=next_row, column=(index + 1)).value = value
-        # Save the changes to the Excel file
+
+    # Save the changes to the Excel file
     wb.save(constants.EXCEL_FILE_PATH)
     print("Battery information successfully collected!")
-
-    # sheet.cell(row=next_row, column=1).value = current_date
-    # sheet.cell(row=next_row, column=2).value = current_time
-    # sheet.cell(row=next_row, column=3).value = charger_connected
-    # sheet.cell(row=next_row, column=4).value = battery_percent
-    # sheet.cell(row=next_row, column=5).value = battery_condition
-    # sheet.cell(row=next_row, column=6).value = health_maximum_capacity
-    # sheet.cell(row=next_row, column=7).value = cycle_count
-
-
-# def print_excel(mac_battery_info):
-#     for index, (key, value) in enumerate(mac_battery_info.items()):
-#         print(f"Index: {index}, Key: {key}, Value: {value}")
 
 
 def write_battery_info(mac_battery_info):
     if not os.path.isfile(constants.EXCEL_FILE_PATH):
         initialize_excel_file()
     write_to_excel(mac_battery_info)
-
-
-# def run():
-#     write_battery_info(mac_battery)
 
 
 if __name__ == "__main__":

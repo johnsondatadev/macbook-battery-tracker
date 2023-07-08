@@ -4,8 +4,6 @@ import constants
 
 
 def execute_script():
-    print("Executing script...")
-    print(constants.APP_PATH)
     subprocess.call(["python", constants.APP_PATH])
 
 
