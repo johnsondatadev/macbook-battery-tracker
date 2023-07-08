@@ -1,5 +1,5 @@
-# mac-battery-count-tracker
-How does the battery count work? This project attempts to seek an answer to this question.
+# Macbook-battery-tracker
+How does the battery count work on a Macbook? This project attempts to seek an answer to this question.
 
 ## Summary
 One of the things that become imperative to care for when you get your new Macbook is the battery life. However, it can be so confusing and frustrating when you make some findings to know how to prolong the life of your battery. The blogs don't come to the rescue, neither do the YouTube videos! It all becomes overwhelming with time that the only alternative is to go by your instinct. While instincts can be to one's advantage, it also poses some threat to the battery life of your system.
