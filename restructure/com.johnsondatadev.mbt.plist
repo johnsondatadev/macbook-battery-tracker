@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>com.johnsondatadev.mbt</string>
+        <key>ProgramArguments</key>
+        <array>
+            <string>/Users/yimjohns/Documents/Dev/Python/macbook_battery_tracker/restructure</string>
+            <string>source venv/bin/activate</string>
+            <string>python</string>
+            <string>run.py</string>
+        </array>
+        <key>WorkingDirectory</key>
+        <string>/Users/yimjohns/Documents/Dev/Python/macbook_battery_tracker/restructure</string>
+        <key>StartInterval</key>
+        <integer>10</integer>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>StandardOutPath</key>
+        <string>/Users/yimjohns/Documents/Dev/Python/macbook_battery_tracker/restructure/out.log</string>
+        <key>StandardErrorPath</key>
+        <string>/Users/yimjohns/Documents/Dev/Python/macbook_battery_tracker/restructure/error.log</string>
+    </dict>
+</plist>
