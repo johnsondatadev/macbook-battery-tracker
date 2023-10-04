@@ -1,7 +1,8 @@
-from battery.MacBattery import MacBattery
-import utils.excel_loader
+from mbt.macbattery.MacBattery import MacBattery
 
-excel_file = utils.excel_loader
+import mbt.utils.excel_loader
+
+excel_file = mbt.utils.excel_loader
 mb = MacBattery()
 
 
@@ -11,4 +12,4 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    pass

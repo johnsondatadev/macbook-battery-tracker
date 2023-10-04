@@ -5,14 +5,14 @@ from datetime import datetime
 
 def get_output(cmd):
     """
-    A helper method to verify the subprocess before sending an output of the particular battery information requested.
+    A helper method to verify the subprocess before sending an output of the particular macbattery information requested.
     """
     return subprocess.check_output(cmd, shell=True, universal_newlines=True).strip()
 
 
 class MacBattery:
     """
-    Class for defining the battery status
+    Class for defining the macbattery status
     """
 
     def __init__(self):
@@ -24,21 +24,21 @@ class MacBattery:
 
     def is_charger_plugged(self):
         """
-        Indicates if the battery is currently plugged (True) or unplugged (False).
+        Indicates if the macbattery is currently plugged (True) or unplugged (False).
         """
         return "Plugged" if self.battery.power_plugged else "Unplugged"
 
     @staticmethod
     def get_battery_health():
         """
-        Indicates the health status of the battery in percentage (%)
+        Indicates the health status of the macbattery in percentage (%)
         """
         health_cmd = "system_profiler SPPowerDataType | awk '/Condition/{getline; print $NF}'"
         return get_output(health_cmd)
 
     def get_battery_percent(self):
         """
-        Returns the current percentage of the battery
+        Returns the current percentage of the macbattery
         """
         percent_cmd = "pmset -g batt | awk '/InternalBattery/{print substr($3, 0, length($3)-1)}'"
         # return self.get_output(percent_cmd)
@@ -47,7 +47,7 @@ class MacBattery:
     @staticmethod
     def get_battery_condition():
         """
-        Returns the condition of the battery. If the battery is still in good condition, it should be NORMAL
+        Returns the condition of the macbattery. If the macbattery is still in good condition, it should be NORMAL
         """
         condition_cmd = "system_profiler SPPowerDataType | grep \"Condition\" | awk '{print $2}'"
         return get_output(condition_cmd)
@@ -55,7 +55,7 @@ class MacBattery:
     @staticmethod
     def get_battery_cycle_count():
         """
-        Returns the battery cycle count.
+        Returns the macbattery cycle count.
         """
         cycle_count_cmd = "system_profiler SPPowerDataType | grep \"Cycle Count\" | awk '{print $3}'"
         return get_output(cycle_count_cmd)
@@ -63,8 +63,8 @@ class MacBattery:
     @staticmethod
     def get_charging_status():
         """
-        Returns the charging status of the battery -
-        charged - when fully charged, AC - when charging or discharging - when using the battery as its power source
+        Returns the charging status of the macbattery -
+        charged - when fully charged, AC - when charging or discharging - when using the macbattery as its power source
         """
         power_source_cmd = "pmset -g batt | awk '/-InternalBattery-0/{getline; print $4}'"
         return get_output(power_source_cmd)
@@ -79,7 +79,7 @@ class MacBattery:
 
     def get_battery_info(self):
         """
-        Returns the battery info as a dictionary in the format that will be used in the excel file.
+        Returns the macbattery info as a dictionary in the format that will be used in the excel file.
         Sample:
         Index: 0, Key: Date, Value: 2023-07-08
         Index: 1, Key: Time, Value: 14:58:21

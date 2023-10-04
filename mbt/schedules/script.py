@@ -1,10 +1,12 @@
 import time
 import subprocess
-import constants
+
+
+from ..utils import constants as constants
 
 
 def execute_script():
-    schedule_script_execution()
+    print("Running script...")
     subprocess.call(["python", constants.APP_PATH])
 
 
@@ -17,7 +19,8 @@ def schedule_script_execution():
 
 
 def run():
-    execute_script()
+    schedule_script_execution()
+    # execute_script()
 
 
 # main()
